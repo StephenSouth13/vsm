@@ -1,0 +1,77 @@
+/* Đảm bảo ảnh không tràn khung và căn giữa */
+.news-image {
+    width: 100%;  /* Đảm bảo ảnh chiếm hết chiều rộng của container */
+    max-width: 800px;  /* Giới hạn kích thước tối đa của ảnh */
+    height: auto;  /* Giữ tỷ lệ khung hình đúng */
+    object-fit: contain;  /* Ảnh vừa với khung mà không bị méo */
+    display: block;
+    margin: 20px auto;  /* Căn giữa ảnh */
+}
+
+/* Tiêu đề tin tức */
+.news-title {
+    font-size: 2.5rem;  /* Kích thước tiêu đề lớn hơn */
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Nội dung văn bản và danh sách tin tức */
+.news-text, .news-list {
+    font-size: 1.4rem;  /* Văn bản dễ đọc */
+    margin-bottom: 20px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Danh sách các chi tiết tin tức */
+.news-list {
+    list-style-type: none;  /* Loại bỏ dấu đầu dòng */
+    padding-left: 0;
+}
+
+.news-list li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.news-list li::before {
+    content: "✔";  /* Icon dấu check cho mỗi mục */
+    position: absolute;
+    left: 0;
+    color: green;
+    font-size: 1.2rem;
+}
+
+/* Media query cho điện thoại */
+@media only screen and (max-width: 768px) {
+    .news-title {
+        font-size: 1.8rem;  /* Kích thước nhỏ hơn cho điện thoại */
+    }
+
+    .news-text, .news-list {
+        font-size: 1.1rem;  /* Giảm cỡ chữ trên điện thoại */
+    }
+
+    .news-image {
+        max-width: 100%;  /* Đảm bảo ảnh không tràn khung trên điện thoại */
+    }
+}
+
+/* Media query cho laptop và màn hình lớn */
+@media only screen and (min-width: 1024px) {
+    .news-title {
+        font-size: 3rem;  /* Tiêu đề lớn hơn trên màn hình lớn */
+    }
+
+    .news-text, .news-list {
+        font-size: 1.6rem;  /* Văn bản lớn hơn cho màn hình lớn */
+    }
+
+    .news-image {
+        max-width: 800px;  /* Giới hạn kích thước ảnh */
+    }
+}

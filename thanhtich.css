@@ -1,0 +1,108 @@
+/* Đặt nền cho trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50; /* Màu nền xanh */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Đổ bóng cho header */
+}
+
+/* Các tiêu đề trong main */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.5em;
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+h1:hover {
+    color: #f1f1f1; /* Màu chữ khi hover */
+}
+
+h2 {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    border-bottom: 2px solid #4CAF50; /* Đường kẻ dưới tiêu đề */
+    padding-bottom: 10px;
+}
+
+/* Phần chính */
+main {
+    padding: 20px;
+}
+
+/* Mỗi mục thành tích */
+.thanh-tich-item {
+    background-color: white; /* Màu nền trắng cho mỗi mục */
+    border: 1px solid #ddd; /* Đường viền nhẹ */
+    border-radius: 8px; /* Bo góc cho đường viền */
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.thanh-tich-item:hover {
+    transform: translateY(-5px); /* Nâng lên một chút khi hover */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Tăng độ đổ bóng */
+}
+
+/* Ảnh trong mục thành tích */
+.image-thanh-tich {
+    max-width: 100%; /* Đảm bảo ảnh không vượt quá chiều rộng */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+    border-radius: 8px; /* Bo góc cho ảnh */
+    transition: transform 0.3s ease; /* Hiệu ứng chuyển động */
+}
+
+.image-thanh-tich:hover {
+    transform: scale(1.05); /* Phóng to ảnh khi hover */
+}
+
+/* Nội dung mô tả */
+.thanh-tich-description {
+    margin-top: 10px;
+    color: #555; /* Màu chữ nhạt hơn */
+    font-style: italic; /* Chữ nghiêng cho mô tả */
+    transition: color 0.3s ease; /* Hiệu ứng chuyển màu */
+}
+
+.thanh-tich-item:hover .thanh-tich-description {
+    color: #333; /* Màu chữ đậm hơn khi hover */
+}
+
+/* Hiệu ứng cho các tiêu đề cấp 3 */
+h3:hover {
+    color: #4CAF50; /* Đổi màu tiêu đề khi hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    .thanh-tich-item {
+        padding: 10px;
+    }
+}

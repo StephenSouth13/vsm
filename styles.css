@@ -1,0 +1,314 @@
+/* Body chính */
+body {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: url('Images/vsm logo 2.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: relative;
+    font-size: 18px;
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Overlay to make text more readable */
+    z-index: -1;
+}
+
+/* Header */
+header {
+    background: hsl(122, 78%, 20%);
+    color: white;
+    padding: 10px 0; /* Giảm padding để rút ngắn chiều cao */
+    text-align: center;
+    width: 100%;
+    position: fixed; /* Cố định header */
+    top: 0; /* Vị trí trên cùng */
+    left: 0; /* Vị trí bên trái */
+    z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5rem; /* Giảm kích thước chữ tiêu đề */
+}
+header p {
+    font-size: 1.2rem; /* Giảm kích thước chữ phụ */
+}
+
+/* Logo trong header */
+header .logo {
+    position: absolute; /* Để logo nằm bên trái */
+    left: 20px; /* Khoảng cách từ bên trái */
+    top: 10px; /* Khoảng cách từ trên cùng */
+}
+
+/* Giới thiệu Section */
+#gioi-thieu {
+    margin-top: 250px; /* Tăng khoảng cách giữa header và phần giới thiệu */
+    padding: 20px; /* Optional padding for content */
+}
+
+/* Video container styles */
+.video-container {
+    margin-top: 20px; /* Space above the video container */
+}
+
+/* Thanh điều hướng (nav) */
+nav {
+    margin: 60px 0; /* Tăng khoảng cách dưới để tránh che mất nội dung */
+    position: sticky; /* Đặt menu điều hướng ở vị trí sticky */
+    top: 0; /* Để nó dính ở đầu trang */
+    background-color: hsl(122, 78%, 20%); /* Màu nền cho nav */
+    z-index: 10; /* Để nav nằm trên các phần tử khác khi cuộn */
+}
+nav ul {
+    list-style: none; /* Không hiển thị dấu chấm trước mỗi mục */
+    padding: 0; /* Xóa padding mặc định */
+    display: flex; /* Hiển thị các mục trong hàng ngang */
+    justify-content: space-around; /* Căn đều các mục trong menu */
+    width: 100%; /* Chiều rộng 100% */
+}
+nav ul li {
+    margin: 0; /* Không cần khoảng cách giữa các mục */
+}
+nav a {
+    color: white; /* Màu chữ cho các liên kết */
+    text-decoration: none; /* Xóa gạch chân */
+    font-weight: bold; /* Đậm chữ */
+    padding: 10px 15px; /* Padding cho các mục */
+    border-radius: 5px; /* Bo góc cho các mục */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+nav a:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+/* Nội dung chính */
+main {
+    width: 100%;
+    max-width: 1200px; /* Chiều rộng tối đa cho nội dung */
+    margin: 0 auto; /* Căn giữa nội dung */
+    padding: 20px; /* Padding cho nội dung */
+    font-size: 1.2rem; /* Kích thước chữ cho nội dung chính */
+}
+
+/* Các phần nội dung (section) */
+section {
+    background: white; /* Màu nền cho các phần */
+    padding: 20px; /* Padding cho các phần */
+    margin-bottom: 20px; /* Khoảng cách dưới */
+    border-radius: 8px; /* Bo góc cho các phần */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng cho các phần */
+}
+section h2 {
+    color: #333; /* Màu chữ cho tiêu đề phần */
+    margin-bottom: 10px; /* Khoảng cách dưới tiêu đề */
+    font-size: 2rem; /* Kích thước chữ cho tiêu đề phần */
+}
+
+/* Phong cách cho video container */
+.video-container {
+    position: relative; 
+    overflow: hidden; 
+    width: 100%; 
+    max-width: 100%; 
+    height: 0; 
+    padding-bottom: 56.25%; /* Tỉ lệ 16:9 cho video */
+}
+
+.intro-video {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    border-radius: 8px; 
+    object-fit: cover; /* Giữ tỷ lệ khung hình */
+}
+
+/* Phong cách cho tiêu đề video */
+.video-title {
+    position: absolute;
+    top: 10px; /* Vị trí cách trên */
+    left: 50%;
+    transform: translateX(-50%); /* Căn giữa theo chiều ngang */
+    font-size: 24px; /* Kích thước chữ lớn hơn */
+    color: white; /* Màu chữ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Đổ bóng cho chữ */
+}
+
+/* Phong cách cho mô tả video với hiệu ứng lửa */
+.fire-text {
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 32px;
+    color: #FFA500; /* Bright orange for better visibility */
+    text-shadow: 0 0 5px rgba(255, 255, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.8); /* Added yellow shadow */
+    animation: fireEffect 1s infinite alternate;
+}
+
+
+/* Hiệu ứng lửa */
+@keyframes fireEffect {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 165, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.8);
+    }
+    100% {
+        text-shadow: 0 0 15px rgba(255, 165, 0, 1), 0 0 20px rgba(255, 0, 0, 1);
+    }
+}
+
+/* Phong cách cho mô tả video */
+.video-description {
+    margin-top: 15px; /* Khoảng cách giữa video và mô tả */
+    font-size: 16px; /* Kích thước chữ */
+    color: #333; /* Màu chữ */
+    text-align: center; /* Căn giữa chữ mô tả */
+}
+
+
+/* Phong cách cho form đăng ký */
+form {
+    display: flex; /* Sử dụng flexbox */
+    flex-direction: column; /* Đặt chiều dọc */
+    gap: 15px; /* Khoảng cách giữa các phần tử */
+    background-color: #e9ecef; /* Màu nền cho form */
+    padding: 20px; /* Padding cho form */
+    border-radius: 10px; /* Bo góc cho form */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng cho form */
+}
+input, select, button {
+    padding: 10px; /* Padding cho các trường */
+    border: 1px solid #ccc; /* Đường viền cho các trường */
+    border-radius: 5px; /* Bo góc cho các trường */
+    font-size: 1rem; /* Kích thước chữ cho các trường */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển đổi */
+}
+input:focus, select:focus {
+    outline: none; /* Xóa đường viền khi chọn */
+    border-color: #007bff; /* Đổi màu viền khi chọn */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Bóng cho các trường khi chọn */
+}
+button {
+    background-color: #007bff; /* Màu nền cho nút */
+    color: white; /* Màu chữ cho nút */
+    font-weight: bold; /* Đậm chữ cho nút */
+    cursor: pointer; /* Thay đổi con trỏ khi hover */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+button:hover {
+    background-color: #0056b3; /* Màu nền khi hover */
+}
+
+/* Phong cách cho các liên kết */
+a {
+    color: #007bff; /* Màu chữ cho liên kết */
+    text-decoration: none; /* Xóa gạch chân */
+}
+a:hover {
+    text-decoration: underline; /* Gạch chân khi hover */
+}
+
+/* Bố cục ba cột */
+.columns {
+    display: flex; /* Sử dụng flexbox */
+    justify-content: space-between; /* Căn đều giữa các cột */
+    gap: 20px; /* Khoảng cách giữa các cột */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+.column {
+    flex: 1; /* Chiều rộng cột tự động */
+    padding: 15px; /* Padding cho cột */
+    background: #f1f1f1; /* Màu nền cho cột */
+    border-radius: 8px; /* Bo góc cho cột */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Bóng cho cột */
+    text-align: center; /* Căn giữa nội dung trong cột */
+    transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển đổi */
+}
+.column:hover {
+    transform: scale(1.02); /* Tăng kích thước cột khi hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tăng bóng cho cột khi hover */
+}
+
+/* Footer */
+footer {
+    text-align: center; /* Căn giữa nội dung trong footer */
+    padding: 10px; /* Padding cho footer */
+    background: #f4f4f4; /* Màu nền cho footer */
+    position: relative; /* Vị trí tương đối cho footer */
+    bottom: 0; /* Đặt footer ở dưới cùng */
+    width: 100%; /* Chiều rộng 100% */
+}
+
+/* Responsive cho mobile */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Đặt menu theo chiều dọc */
+        align-items: center; /* Căn giữa các mục */
+    }
+    nav ul li {
+        margin: 10px 0; /* Khoảng cách giữa các mục */
+    }
+    main {
+        padding: 10px; /* Padding cho nội dung chính */
+        font-size: 16px; /* Kích thước chữ cho nội dung chính */
+    }
+    form {
+        gap: 10px; /* Khoảng cách giữa các phần tử trong form */
+    }
+    .columns {
+        flex-direction: column; /* Đặt cột theo chiều dọc */
+    }
+}
+
+
+#thanh-tich img {
+    max-width: 100%; /* Đảm bảo ảnh không lớn hơn chiều rộng của phần chứa */
+    height: auto; /* Đảm bảo tỉ lệ khung hình của ảnh */
+    border-radius: 8px; /* Bo góc cho ảnh nếu cần */
+    display: block; /* Ngăn chặn khoảng trắng bên dưới ảnh */
+    margin: 0 auto; /* Căn giữa ảnh nếu cần */
+}
+
+
+/* Phần tin tức */
+#tin-tuc {
+    margin: 20px 0; /* Khoảng cách cho phần tin tức */
+    background-color: white; /* Màu nền cho phần tin tức */
+    padding: 15px; /* Padding cho phần tin tức */
+    border-radius: 8px; /* Bo góc cho phần tin tức */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng cho phần tin tức */
+}
+#tin-tuc h2 {
+    font-size: 1.8rem; /* Kích thước chữ cho tiêu đề tin tức */
+    color: #333; /* Màu chữ cho tiêu đề tin tức */
+}
+#tin-tuc ul {
+    list-style: none; /* Không hiển thị dấu chấm trước mỗi mục */
+    padding: 0; /* Xóa padding mặc định */
+}
+#tin-tuc ul li {
+    margin: 10px 0; /* Khoảng cách giữa các tin tức */
+}
+#tin-tuc img {
+    max-width: 100%; /* Đảm bảo hình ảnh không lớn hơn chiều rộng của phần chứa */
+    height: auto; /* Đảm bảo tỉ lệ khung hình của hình ảnh */
+    border-radius: 8px; /* Bo góc cho hình ảnh nếu cần */
+}
+/* Countdown Style */
+#dem-ngược {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+

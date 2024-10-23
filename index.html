@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Vietnam Student Marathon 2024</title>
+</head>     
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <img src="Images/logo.png" alt="VSM Logo" class="logo" onclick="window.location.href='#gioi-thieu'">
+            <div class="title-content">
+                <h1>Vietnam Student Marathon 2024</h1>
+                <p>"RUN FOR SUCCESS"</p>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#gioi-thieu">Giới Thiệu</a></li>
+                <li><a href="#thong-tin">Thông Tin Giải Chạy</a></li>
+                <li><a href="#thanh-tich">Thành Tích</a></li>
+                <li><a href="#dang-ky">Đăng Ký</a></li>
+                <li><a href="#tin-tuc">Tin Tức</a></li>
+                <li><a href="#lien-he">Liên Hệ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Giới Thiệu Section -->
+        <section id="gioi-thieu">
+            <h2>Giới Thiệu</h2>
+            <p class="fire-text">Chào mừng bạn đến với Vietnam Student Marathon 2024!</p>
+            <!-- Video Section -->
+            <div class="video-container">
+                <h3>Demo Video</h3>
+                <video class="intro-video" controls autoplay muted>
+                    <source src="Images/VSM 2023.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p>Vietnam Student Marathon (VSM) là chương trình dành cho những bạn học sinh, sinh viên có ý chí, mạnh mẽ, thử thách đầy bản lĩnh. Và còn là một tập thể có đam mê chạy bộ đến từ ĐH Kinh tế TP. HCM, ĐH KT-TC TP.HCM (UEF), ĐH Sư phạm, ĐH Văn Lang (VLU),...</p>
+
+            <!-- Đếm Ngược Section -->
+            <section id="dem-ngược">
+                <h2>Đếm Ngược Đến Giải Chạy</h2>
+                <div id="countdown" style="font-size: 24px; font-weight: bold;"></div>
+            </section>
+        </section>
+
+        <!-- Thông Tin Giải Chạy Section -->
+        <section id="thong-tin">
+            <h2>Thông Tin Giải Chạy</h2>
+            <div class="columns">
+                <div class="column">
+                    <i class="fas fa-running"></i>
+                    <h3>Sự Kiện Marathon Dành Cho Sinh Viên Toàn Quốc</h3>
+                    <p>Mùa giải 2023 thu hút sinh viên từ khắp các trường đại học khác nhau...</p>
+                </div>
+                <div class="column">
+                    <i class="fas fa-route"></i>
+                    <h3>Đường Chạy Được Chọn Lựa Đầy Ấn Tượng</h3>
+                    <p>Quang cảnh thoáng đãng, thuận lợi cho các Runner sải bước chạy...</p>
+                </div>
+                <div class="column">
+                    <i class="fas fa-award"></i>
+                    <h3>Đạt Tiêu Chuẩn Vận Hành Tổ Chức</h3>
+                    <p>Các tiêu chuẩn được áp dụng năng lực, điều kiện của tổ chức...</p>
+                </div>
+            </div>
+            <h3>Giải chạy bộ tháng 12/12/2024</h3>
+            <p>Thời gian nhận BIB và thi đấu: từ 3h00 sáng chủ nhật, 12/12/2024.</p>
+            <h4>Địa điểm:</h4>
+            <ul>
+                <li>Gửi xe và tập trung: Tại khu dân cư Bình Lợi, Bình Thạnh, TP.HCM...</li>
+                <li>Map: <a href="https://maps.app.goo.gl/hHY79DLJFryxRdkB9" target="_blank">Xem trên Google Maps</a></li>
+                <li>Khu vực vệ sinh - WC: trong tiệm cafe HULO</li>
+            </ul>
+        </section>
+
+        <!-- Thành Tích Section -->
+        <section id="thanh-tich">
+            <h2>Thành Tích</h2>
+            <div class="news-container">
+                <div class="news-item">
+                    <a href="thanhtich.html" target="_blank">
+                        <img src="Images/giải vsm khởi động.jpg" alt="Uyên Lã chạy cùng chị Nhi">
+                        <p>Click vào đây để xem chi tiết</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Đăng Ký Section -->
+        <section id="dang-ky">
+            <h2>Đăng Ký</h2>
+            <form id="registration-form" method="POST" action="submit_registration.php">
+                <input type="text" id="name" placeholder="Tên" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="phone" placeholder="Số điện thoại" required>
+                <label for="birthdate">Ngày sinh:</label>
+                <input type="date" id="birthdate" required>
+                <input type="text" id="school" placeholder="Học sinh/Sinh viên/Cựu học sinh (Tên trường)" required>
+                <select id="event" required>
+                    <option value="">Chọn sự kiện</option>
+                    <option value="Giải chạy bộ sinh viên 12/12/2024">Giải chạy bộ sinh viên 12/12/2024</option>
+                </select>
+                <button type="submit">Đăng ký</button>
+            </form>
+        </section>
+
+        <!-- Tin Tức Section -->
+        <section id="tin-tuc">
+            <h2>Tin Tức Tháng 10</h2>
+            <div class="news-container">
+                <div class="news-item">
+                    <a href="Tin 3 .html" target="_blank">
+                        <img src="Images/Em Quân hoàn thành 21km sub2.jpg" alt="Hình ảnh thử nghiệm">
+                        <h3>TUẦN 2: Vinh danh thành tích cho sinh viên năm nhất Nguyễn Thanh Quân hoàn thành 21km sub2</h3>
+                        <p>Quân chia sẻ câu chuyện khá dí dỏm...</p>
+                    </a>
+                </div>
+                <div class="news-item">
+                    <a href="Tin 2 .html" target="_blank">
+                        <img src="Images/Em Quân hoàn thành 21km sub2.jpg" alt="Hình ảnh thử nghiệm">
+                        <h3>TUẦN 2: Vinh danh thành tích cho sinh viên năm nhất Nguyễn Thanh Quân hoàn thành 21km sub2</h3>
+                        <p>Quân chia sẻ câu chuyện khá dí dỏm...</p>
+                    </a>
+                </div>
+
+                <div class="news-item">
+                    <a href="Tin 1 .html" target="_blank">
+                        <img src="Images/Chị Nhi chạy cùng Uyên Lã.jpg" alt="Uyên Lã chạy cùng chị Nhi">
+                        <h3>TUẦN 1: Cô gái với nụ cười tươi tắn Uyển Nhi</h3>
+                        <p>Người may mắn nhận được bib chạy VSM trong tuần đầu tiên...</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Liên Hệ Section -->
+        <section id="lien-he">
+            <h2>Liên Hệ</h2>
+            <p>- PhD Phan Huỳnh Anh (Mentor)</p>
+            <p>- Mrs. Uyên: 0987135043 (Trưởng BTC)</p>
+            <p>- Mr. Khải: 0329381489 (Phó BTC)</p>
+            <p>- Mr. Long: 0979137018 (Phó BTC)</p>
+            <p>- Các thông tin liên hệ khác đã thông báo trên fanpage Facebook</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Vietnam Student Marathon. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Đoạn mã JavaScript cho tính năng sticky của header
+        window.onscroll = function() {
+            const header = document.querySelector('header');
+            const sticky = header.offsetTop;
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky");
+            } else {
+                header.classList.remove("sticky");
+            }
+        };
+
+        // Đoạn mã JavaScript cho đếm ngược
+        const countdownDate = new Date("December 12, 2024 03:00:00").getTime();
+
+        const countdownFunction = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countdownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML = days + " ngày " + hours + " giờ " +
+                minutes + " phút " + seconds + " giây ";
+
+            if (distance < 0) {
+                clearInterval(countdownFunction);
+                document.getElementById("countdown").innerHTML = "Thời gian đã kết thúc!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

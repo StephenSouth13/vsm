@@ -24,33 +24,45 @@ body::before {
 header {
     background: hsl(122, 78%, 20%);
     color: white;
-    padding: 10px 0; /* Giảm padding để rút ngắn chiều cao */
+    padding: 10px 20px; /* Thêm padding ngang để tránh logo tràn */
     text-align: center;
     width: 100%;
-    position: fixed; /* Cố định header */
-    top: 0; /* Vị trí trên cùng */
-    left: 0; /* Vị trí bên trái */
-    z-index: 1000; /* Đảm bảo header nằm trên các phần tử khác */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 header h1 {
     margin: 0;
-    font-size: 2.5rem; /* Giảm kích thước chữ tiêu đề */
+    font-size: 2rem;
 }
 header p {
-    font-size: 1.2rem; /* Giảm kích thước chữ phụ */
+    font-size: 1rem;
 }
 
 /* Logo trong header */
 header .logo {
-    position: absolute; /* Để logo nằm bên trái */
-    left: 20px; /* Khoảng cách từ bên trái */
-    top: 10px; /* Khoảng cách từ trên cùng */
+    position: absolute;
+    left: 10px; /* Khoảng cách từ bên trái để logo không bị tràn */
+    top: 20%; /* Căn giữa theo chiều dọc */
+    transform: translateY(-50%); /* Căn giữa theo chiều dọc */
+    max-width: 150px; /* Giới hạn kích thước logo */
+    height: auto; /* Đảm bảo tỷ lệ khung hình của logo */
 }
+
+/* Responsive chỉnh lại vị trí logo */
+@media (max-width: 768px) {
+    header .logo {
+        max-width: 80px; /* Giảm kích thước logo trên màn hình nhỏ */
+        left: 10px; /* Giảm khoảng cách từ cạnh trái */
+    }
+}
+
 
 /* Giới thiệu Section */
 #gioi-thieu {
-    margin-top: 250px; /* Tăng khoảng cách giữa header và phần giới thiệu */
+    margin-top: 170px; /* Tăng khoảng cách giữa header và phần giới thiệu */
     padding: 20px; /* Optional padding for content */
 }
 
@@ -61,7 +73,7 @@ header .logo {
 
 /* Thanh điều hướng (nav) */
 nav {
-    margin: 60px 0; /* Tăng khoảng cách dưới để tránh che mất nội dung */
+    margin: 5px 0; /* Tăng khoảng cách dưới để tránh che mất nội dung */
     position: sticky; /* Đặt menu điều hướng ở vị trí sticky */
     top: 0; /* Để nó dính ở đầu trang */
     background-color: hsl(122, 78%, 20%); /* Màu nền cho nav */
@@ -156,15 +168,6 @@ section h2 {
 }
 
 
-/* Hiệu ứng lửa */
-@keyframes fireEffect {
-    0% {
-        text-shadow: 0 0 5px rgba(255, 165, 0, 0.8), 0 0 10px rgba(255, 0, 0, 0.8);
-    }
-    100% {
-        text-shadow: 0 0 15px rgba(255, 165, 0, 1), 0 0 20px rgba(255, 0, 0, 1);
-    }
-}
 
 /* Phong cách cho mô tả video */
 .video-description {
@@ -281,34 +284,125 @@ footer {
 
 /* Phần tin tức */
 #tin-tuc {
-    margin: 20px 0; /* Khoảng cách cho phần tin tức */
-    background-color: white; /* Màu nền cho phần tin tức */
-    padding: 15px; /* Padding cho phần tin tức */
-    border-radius: 8px; /* Bo góc cho phần tin tức */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng cho phần tin tức */
+    margin: 20px 0; /* Khoảng cách bên trên và dưới */
+    background-color: rgb(244, 249, 245); /* Màu nền */
+    padding: 15px; /* Khoảng cách bên trong */
+    border-radius: 8px; /* Bo tròn góc */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Đổ bóng */
 }
+
+/* Tiêu đề tin tức */
 #tin-tuc h2 {
-    font-size: 1.8rem; /* Kích thước chữ cho tiêu đề tin tức */
-    color: #333; /* Màu chữ cho tiêu đề tin tức */
+    font-size: 1.8rem; /* Kích thước chữ cho tiêu đề */
+    color: #333; /* Màu chữ */
+    margin-bottom: 30px; /* Khoảng cách dưới tiêu đề */
 }
-#tin-tuc ul {
-    list-style: none; /* Không hiển thị dấu chấm trước mỗi mục */
-    padding: 0; /* Xóa padding mặc định */
-}
-#tin-tuc ul li {
-    margin: 10px 0; /* Khoảng cách giữa các tin tức */
-}
+
+/* Phong cách cho ảnh trong phần tin tức */
 #tin-tuc img {
-    max-width: 100%; /* Đảm bảo hình ảnh không lớn hơn chiều rộng của phần chứa */
-    height: auto; /* Đảm bảo tỉ lệ khung hình của hình ảnh */
-    border-radius: 8px; /* Bo góc cho hình ảnh nếu cần */
+    max-width: 100%; /* Đảm bảo ảnh không lớn hơn chiều rộng của phần chứa */
+    height: auto; /* Đảm bảo tỉ lệ khung hình của ảnh */
+    border-radius: 8px; /* Bo góc cho ảnh nếu cần */
+    display: block; /* Ngăn chặn khoảng trắng bên dưới ảnh */
+    margin: 0 auto; /* Căn giữa ảnh nếu cần */
 }
+
+/* Mục tin tức */
+.news-item {
+    margin-bottom: 30px; /* Khoảng cách giữa các mục tin tức */
+    border-bottom: 10px solid rgb(207, 207, 207); /* Đường viền dưới cho mục tin tức */
+    padding-bottom: 10px; /* Padding dưới mục tin tức */
+    text-align: center; /* Định dạng văn bản giữa */
+    transition: transform 0.2s; /* Hiệu ứng chuyển động */
+}
+
+.news-item:last-child {
+    border-bottom: none; /* Không hiển thị đường viền dưới cho mục cuối cùng */
+}
+
+/* Mô tả tin tức */
+.news-description {
+    font-size: 1rem; /* Kích thước chữ cho mô tả */
+    color: #666; /* Màu chữ cho mô tả */
+}
+
+/* Định dạng cho phần carousel */
+.news-carousel {
+    display: flex; /* Sử dụng flexbox để định dạng các mục */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    overflow: hidden; /* Ẩn phần bên ngoài */
+}
+
+.news-item img {
+    max-width: 100%; /* Giới hạn kích thước hình ảnh */
+    height: auto; /* Tự động điều chỉnh chiều cao */
+    border-radius: 8px; /* Bo tròn góc cho hình ảnh */
+}
+
+.news-item h3 {
+    font-size: 1.2rem; /* Kích thước chữ cho tiêu đề mục tin tức */
+    margin: 10px 0; /* Khoảng cách trên và dưới */
+    color: #333; /* Màu chữ cho tiêu đề mục tin tức */
+}
+
+.news-item p {
+    font-size: 0.9rem; /* Kích thước chữ cho mô tả mục tin tức */
+    color: #666; /* Màu chữ cho mô tả mục tin tức */
+}
+
+/* Hiệu ứng hover cho mục tin tức */
+.news-item:hover {
+    transform: scale(1.05); /* Tăng kích thước nhẹ khi hover */
+}
+
+/* Định dạng mũi tên */
+.arrow {
+    background-color: #f0f0f0; /* Màu nền cho nút mũi tên */
+    border: none; /* Không viền */
+    padding: 10px; /* Khoảng cách bên trong */
+    cursor: pointer; /* Đổi con trỏ khi hover */
+    border-radius: 50%; /* Bo tròn nút */
+    font-size: 1.5rem; /* Kích thước chữ trong nút */
+    transition: background-color 0.3s, transform 0.3s; /* Thêm hiệu ứng chuyển động cho nút */
+}
+
+.arrow:hover {
+    background-color: #ddd; /* Màu nền khi hover */
+    transform: scale(1.1); /* Tăng kích thước nhẹ khi hover */
+}
+
+
 /* Countdown Style */
 #dem-ngược {
-    text-align: center;
+    text-align: center; /*count down đếm ngược */
     margin: 20px 0;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    background-color: #f9f9f9;/*Chỉnh màu background sang màu trắng*/
+    border-radius: 8px; 
+}
+/* Phần Mạng Xã Hội */
+.social {
+    display: flex; /* Sử dụng flexbox để căn giữa các biểu tượng */
+    justify-content: center; /* Căn giữa các biểu tượng */
+    margin: 20px 0; /* Khoảng cách trên và dưới */
+}
+
+.social a {
+    margin: 0 10px; /* Khoảng cách giữa các biểu tượng */
+    text-decoration: none; /* Xóa gạch chân */
+    color: #333; /* Màu chữ cho các liên kết */
+    font-size: 24px; /* Kích thước chữ cho biểu tượng */
+    transition: color 0.3s; /* Hiệu ứng chuyển đổi màu */
+}
+
+.social a:hover {
+    color: #007bff; /* Màu khi hover */
+}
+
+/* Biểu tượng mạng xã hội */
+.social i {
+    display: inline-block; /* Đảm bảo biểu tượng hiển thị như một khối */
+    font-size: 2rem; /* Kích thước biểu tượng */
 }
 
